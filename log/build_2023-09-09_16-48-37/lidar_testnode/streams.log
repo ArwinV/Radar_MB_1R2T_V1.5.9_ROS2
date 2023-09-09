@@ -1,0 +1,23 @@
+[0.618s] Invoking command in '/home/arwin/ros2_ws/build/lidar_testnode': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/arwin/ros2_ws/build/lidar_testnode/prefix_override:/home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/arwin/ros2_ws/build/lidar_testnode/build --no-deps install_data
+[0.888s] running develop
+[0.888s] /usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+[0.888s]   warnings.warn(
+[0.890s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.890s]   warnings.warn(
+[1.062s] running egg_info
+[1.062s] writing lidar_testnode.egg-info/PKG-INFO
+[1.062s] writing dependency_links to lidar_testnode.egg-info/dependency_links.txt
+[1.062s] writing entry points to lidar_testnode.egg-info/entry_points.txt
+[1.063s] writing requirements to lidar_testnode.egg-info/requires.txt
+[1.063s] writing top-level names to lidar_testnode.egg-info/top_level.txt
+[1.065s] reading manifest file 'lidar_testnode.egg-info/SOURCES.txt'
+[1.066s] writing manifest file 'lidar_testnode.egg-info/SOURCES.txt'
+[1.067s] running build_ext
+[1.067s] Creating /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar-testnode.egg-link (link to .)
+[1.068s] Installing lidar script to /home/arwin/ros2_ws/install/lidar_testnode/lib/lidar_testnode
+[1.068s] Installing test_node script to /home/arwin/ros2_ws/install/lidar_testnode/lib/lidar_testnode
+[1.069s] 
+[1.069s] Installed /home/arwin/ros2_ws/build/lidar_testnode
+[1.069s] running install_data
+[1.069s] copying package.xml -> /home/arwin/ros2_ws/install/lidar_testnode/share/lidar_testnode
+[1.103s] Invoked command in '/home/arwin/ros2_ws/build/lidar_testnode' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/arwin/ros2_ws/build/lidar_testnode/prefix_override:/home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py develop --editable --build-directory /home/arwin/ros2_ws/build/lidar_testnode/build --no-deps install_data

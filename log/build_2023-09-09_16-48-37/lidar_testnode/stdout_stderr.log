@@ -1,0 +1,21 @@
+running develop
+/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running egg_info
+writing lidar_testnode.egg-info/PKG-INFO
+writing dependency_links to lidar_testnode.egg-info/dependency_links.txt
+writing entry points to lidar_testnode.egg-info/entry_points.txt
+writing requirements to lidar_testnode.egg-info/requires.txt
+writing top-level names to lidar_testnode.egg-info/top_level.txt
+reading manifest file 'lidar_testnode.egg-info/SOURCES.txt'
+writing manifest file 'lidar_testnode.egg-info/SOURCES.txt'
+running build_ext
+Creating /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar-testnode.egg-link (link to .)
+Installing lidar script to /home/arwin/ros2_ws/install/lidar_testnode/lib/lidar_testnode
+Installing test_node script to /home/arwin/ros2_ws/install/lidar_testnode/lib/lidar_testnode
+
+Installed /home/arwin/ros2_ws/build/lidar_testnode
+running install_data
+copying package.xml -> /home/arwin/ros2_ws/install/lidar_testnode/share/lidar_testnode

@@ -1,0 +1,36 @@
+running egg_info
+creating ../build/lidar_testnode/lidar_testnode.egg-info
+writing ../build/lidar_testnode/lidar_testnode.egg-info/PKG-INFO
+writing dependency_links to ../build/lidar_testnode/lidar_testnode.egg-info/dependency_links.txt
+writing entry points to ../build/lidar_testnode/lidar_testnode.egg-info/entry_points.txt
+writing requirements to ../build/lidar_testnode/lidar_testnode.egg-info/requires.txt
+writing top-level names to ../build/lidar_testnode/lidar_testnode.egg-info/top_level.txt
+writing manifest file '../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+reading manifest file '../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+writing manifest file '../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+running build
+running build_py
+creating /home/arwin/ros2_ws/src/build/lidar_testnode/build
+creating /home/arwin/ros2_ws/src/build/lidar_testnode/build/lib
+creating /home/arwin/ros2_ws/src/build/lidar_testnode/build/lib/lidar_testnode
+copying lidar_testnode/__init__.py -> /home/arwin/ros2_ws/src/build/lidar_testnode/build/lib/lidar_testnode
+copying lidar_testnode/testnode.py -> /home/arwin/ros2_ws/src/build/lidar_testnode/build/lib/lidar_testnode
+running install
+/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+  warnings.warn(
+running install_lib
+creating /home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode
+copying /home/arwin/ros2_ws/src/build/lidar_testnode/build/lib/lidar_testnode/__init__.py -> /home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode
+copying /home/arwin/ros2_ws/src/build/lidar_testnode/build/lib/lidar_testnode/testnode.py -> /home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode
+byte-compiling /home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode/testnode.py to testnode.cpython-310.pyc
+running install_data
+creating /home/arwin/ros2_ws/src/install/lidar_testnode/share/ament_index
+creating /home/arwin/ros2_ws/src/install/lidar_testnode/share/ament_index/resource_index
+creating /home/arwin/ros2_ws/src/install/lidar_testnode/share/ament_index/resource_index/packages
+copying resource/lidar_testnode -> /home/arwin/ros2_ws/src/install/lidar_testnode/share/ament_index/resource_index/packages
+copying package.xml -> /home/arwin/ros2_ws/src/install/lidar_testnode/share/lidar_testnode
+running install_egg_info
+Copying ../build/lidar_testnode/lidar_testnode.egg-info to /home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode-0.0.0-py3.10.egg-info
+running install_scripts
+writing list of installed files to '/home/arwin/ros2_ws/src/build/lidar_testnode/install.log'

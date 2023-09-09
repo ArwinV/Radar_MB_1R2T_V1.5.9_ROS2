@@ -1,0 +1,12 @@
+Metadata-Version: 2.1
+Name: lidar-testnode
+Version: 0.0.1
+Summary: Basic ROS2 node that publishes LaserScan messages
+Home-page: UNKNOWN
+Maintainer: arwin
+Maintainer-email: arwin_verhoeven@hotmail.com
+License: GNU GPLv3
+Platform: UNKNOWN
+
+UNKNOWN
+

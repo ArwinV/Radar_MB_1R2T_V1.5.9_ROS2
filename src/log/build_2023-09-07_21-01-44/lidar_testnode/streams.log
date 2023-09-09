@@ -1,0 +1,26 @@
+[0.645s] Invoking command in '/home/arwin/ros2_ws/src/lidar_testnode': PYTHONPATH=/home/arwin/ros2_ws/src/build/lidar_testnode/prefix_override:/home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/lidar_testnode build --build-base /home/arwin/ros2_ws/src/build/lidar_testnode/build install --record /home/arwin/ros2_ws/src/build/lidar_testnode/install.log --single-version-externally-managed
+[0.901s] running egg_info
+[0.901s] writing ../build/lidar_testnode/lidar_testnode.egg-info/PKG-INFO
+[0.901s] writing dependency_links to ../build/lidar_testnode/lidar_testnode.egg-info/dependency_links.txt
+[0.901s] writing entry points to ../build/lidar_testnode/lidar_testnode.egg-info/entry_points.txt
+[0.902s] writing requirements to ../build/lidar_testnode/lidar_testnode.egg-info/requires.txt
+[0.902s] writing top-level names to ../build/lidar_testnode/lidar_testnode.egg-info/top_level.txt
+[0.903s] reading manifest file '../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+[0.904s] writing manifest file '../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+[0.904s] running build
+[0.904s] running build_py
+[0.905s] copying lidar_testnode/testnode.py -> /home/arwin/ros2_ws/src/build/lidar_testnode/build/lib/lidar_testnode
+[0.905s] running install
+[0.905s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.905s]   warnings.warn(
+[0.905s] running install_lib
+[0.906s] copying /home/arwin/ros2_ws/src/build/lidar_testnode/build/lib/lidar_testnode/testnode.py -> /home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode
+[0.907s] byte-compiling /home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode/testnode.py to testnode.cpython-310.pyc
+[0.907s] running install_data
+[0.908s] running install_egg_info
+[0.909s] removing '/home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode-0.0.0-py3.10.egg-info' (and everything under it)
+[0.910s] Copying ../build/lidar_testnode/lidar_testnode.egg-info to /home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode-0.0.0-py3.10.egg-info
+[0.911s] running install_scripts
+[0.934s] Installing test_node script to /home/arwin/ros2_ws/src/install/lidar_testnode/lib/lidar_testnode
+[0.935s] writing list of installed files to '/home/arwin/ros2_ws/src/build/lidar_testnode/install.log'
+[0.972s] Invoked command in '/home/arwin/ros2_ws/src/lidar_testnode' returned '0': PYTHONPATH=/home/arwin/ros2_ws/src/build/lidar_testnode/prefix_override:/home/arwin/ros2_ws/src/install/lidar_testnode/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../build/lidar_testnode build --build-base /home/arwin/ros2_ws/src/build/lidar_testnode/build install --record /home/arwin/ros2_ws/src/build/lidar_testnode/install.log --single-version-externally-managed

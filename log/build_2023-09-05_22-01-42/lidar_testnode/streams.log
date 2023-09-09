@@ -1,0 +1,22 @@
+[0.618s] Invoking command in '/home/arwin/ros2_ws/src/lidar_testnode': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/arwin/ros2_ws/build/lidar_testnode/prefix_override:/home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lidar_testnode build --build-base /home/arwin/ros2_ws/build/lidar_testnode/build install --record /home/arwin/ros2_ws/build/lidar_testnode/install.log --single-version-externally-managed
+[0.856s] running egg_info
+[0.856s] writing ../../build/lidar_testnode/lidar_testnode.egg-info/PKG-INFO
+[0.857s] writing dependency_links to ../../build/lidar_testnode/lidar_testnode.egg-info/dependency_links.txt
+[0.857s] writing entry points to ../../build/lidar_testnode/lidar_testnode.egg-info/entry_points.txt
+[0.857s] writing requirements to ../../build/lidar_testnode/lidar_testnode.egg-info/requires.txt
+[0.857s] writing top-level names to ../../build/lidar_testnode/lidar_testnode.egg-info/top_level.txt
+[0.859s] reading manifest file '../../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+[0.860s] writing manifest file '../../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+[0.860s] running build
+[0.860s] running build_py
+[0.860s] running install
+[0.860s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[0.860s]   warnings.warn(
+[0.860s] running install_lib
+[0.862s] running install_data
+[0.862s] running install_egg_info
+[0.864s] removing '/home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode-0.0.0-py3.10.egg-info' (and everything under it)
+[0.864s] Copying ../../build/lidar_testnode/lidar_testnode.egg-info to /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode-0.0.0-py3.10.egg-info
+[0.865s] running install_scripts
+[0.886s] writing list of installed files to '/home/arwin/ros2_ws/build/lidar_testnode/install.log'
+[0.916s] Invoked command in '/home/arwin/ros2_ws/src/lidar_testnode' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/arwin/ros2_ws/build/lidar_testnode/prefix_override:/home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lidar_testnode build --build-base /home/arwin/ros2_ws/build/lidar_testnode/build install --record /home/arwin/ros2_ws/build/lidar_testnode/install.log --single-version-externally-managed

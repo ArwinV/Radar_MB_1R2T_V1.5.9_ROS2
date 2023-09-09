@@ -1,0 +1,38 @@
+[0.000000] (-) TimerEvent: {}
+[0.000756] (lidar_testnode) JobQueued: {'identifier': 'lidar_testnode', 'dependencies': OrderedDict()}
+[0.000864] (lidar_testnode) JobStarted: {'identifier': 'lidar_testnode'}
+[0.099185] (-) TimerEvent: {}
+[0.199439] (-) TimerEvent: {}
+[0.299762] (-) TimerEvent: {}
+[0.400067] (-) TimerEvent: {}
+[0.500353] (-) TimerEvent: {}
+[0.600643] (-) TimerEvent: {}
+[0.700943] (-) TimerEvent: {}
+[0.719560] (lidar_testnode) Command: {'cmd': ['/usr/bin/python3', 'setup.py', 'develop', '--editable', '--build-directory', '/home/arwin/ros2_ws/build/lidar_testnode/build', '--no-deps', 'install_data'], 'cwd': '/home/arwin/ros2_ws/build/lidar_testnode', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'USER': 'arwin', 'LC_TIME': 'nl_NL.UTF-8', 'XDG_SESSION_TYPE': 'wayland', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/iron/opt/rviz_ogre_vendor/lib:/opt/ros/iron/lib/x86_64-linux-gnu:/opt/ros/iron/lib', 'HOME': '/home/arwin', 'OLDPWD': '/home/arwin/ros2_ws/src', 'DESKTOP_SESSION': 'ubuntu', 'ROS_PYTHON_VERSION': '3', 'GNOME_SHELL_SESSION_MODE': 'ubuntu', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'nl_NL.UTF-8', 'SYSTEMD_EXEC_PID': '25571', 'IM_CONFIG_CHECK_ENV': '1', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'IM_CONFIG_PHASE': '1', 'WAYLAND_DISPLAY': 'wayland-0', 'COLCON_PREFIX_PATH': '/home/arwin/ros2_ws/install', 'ROS_DISTRO': 'iron', 'LOGNAME': 'arwin', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'USERNAME': 'arwin', 'TERM': 'xterm-256color', 'GNOME_DESKTOP_SESSION_ID': 'this-is-deprecated', 'PATH': '/opt/ros/iron/bin:/home/arwin/.local/bin:/home/arwin/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin', 'SESSION_MANAGER': 'local/arwin-ThinkPad-W541:@/tmp/.ICE-unix/25545,unix/arwin-ThinkPad-W541:/tmp/.ICE-unix/25545', 'XDG_MENU_PREFIX': 'gnome-', 'LC_ADDRESS': 'nl_NL.UTF-8', 'GNOME_TERMINAL_SCREEN': '/org/gnome/Terminal/screen/e49a1803_93dd_4e4b_bc7b_6ed0feef5b81', 'GNOME_SETUP_DISPLAY': ':1', 'XDG_RUNTIME_DIR': '/run/user/1000', 'DISPLAY': ':0', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'ubuntu:GNOME', 'LC_TELEPHONE': 'nl_NL.UTF-8', 'XMODIFIERS': '@im=ibus', 'XDG_SESSION_DESKTOP': 'ubuntu', 'XAUTHORITY': '/run/user/1000/.mutter-Xwaylandauth.OU7DA2', 'LS_COLORS': 'rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:mi=00:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32:*.tar=01;31:*.tgz=01;31:*.arc=01;31:*.arj=01;31:*.taz=01;31:*.lha=01;31:*.lz4=01;31:*.lzh=01;31:*.lzma=01;31:*.tlz=01;31:*.txz=01;31:*.tzo=01;31:*.t7z=01;31:*.zip=01;31:*.z=01;31:*.dz=01;31:*.gz=01;31:*.lrz=01;31:*.lz=01;31:*.lzo=01;31:*.xz=01;31:*.zst=01;31:*.tzst=01;31:*.bz2=01;31:*.bz=01;31:*.tbz=01;31:*.tbz2=01;31:*.tz=01;31:*.deb=01;31:*.rpm=01;31:*.jar=01;31:*.war=01;31:*.ear=01;31:*.sar=01;31:*.rar=01;31:*.alz=01;31:*.ace=01;31:*.zoo=01;31:*.cpio=01;31:*.7z=01;31:*.rz=01;31:*.cab=01;31:*.wim=01;31:*.swm=01;31:*.dwm=01;31:*.esd=01;31:*.jpg=01;35:*.jpeg=01;35:*.mjpg=01;35:*.mjpeg=01;35:*.gif=01;35:*.bmp=01;35:*.pbm=01;35:*.pgm=01;35:*.ppm=01;35:*.tga=01;35:*.xbm=01;35:*.xpm=01;35:*.tif=01;35:*.tiff=01;35:*.png=01;35:*.svg=01;35:*.svgz=01;35:*.mng=01;35:*.pcx=01;35:*.mov=01;35:*.mpg=01;35:*.mpeg=01;35:*.m2v=01;35:*.mkv=01;35:*.webm=01;35:*.webp=01;35:*.ogm=01;35:*.mp4=01;35:*.m4v=01;35:*.mp4v=01;35:*.vob=01;35:*.qt=01;35:*.nuv=01;35:*.wmv=01;35:*.asf=01;35:*.rm=01;35:*.rmvb=01;35:*.flc=01;35:*.avi=01;35:*.fli=01;35:*.flv=01;35:*.gl=01;35:*.dl=01;35:*.xcf=01;35:*.xwd=01;35:*.yuv=01;35:*.cgm=01;35:*.emf=01;35:*.ogv=01;35:*.ogx=01;35:*.aac=00;36:*.au=00;36:*.flac=00;36:*.m4a=00;36:*.mid=00;36:*.midi=00;36:*.mka=00;36:*.mp3=00;36:*.mpc=00;36:*.ogg=00;36:*.ra=00;36:*.wav=00;36:*.oga=00;36:*.opus=00;36:*.spx=00;36:*.xspf=00;36:', 'GNOME_TERMINAL_SERVICE': ':1.221', 'SSH_AGENT_LAUNCHER': 'gnome-keyring', 'SSH_AUTH_SOCK': '/run/user/1000/keyring/ssh', 'AMENT_PREFIX_PATH': '/home/arwin/ros2_ws/install/lidar_testnode:/opt/ros/iron', 'SHELL': '/bin/bash', 'LC_NAME': 'nl_NL.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'ubuntu', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'nl_NL.UTF-8', 'LC_IDENTIFICATION': 'nl_NL.UTF-8', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'QT_IM_MODULE': 'ibus', 'PWD': '/home/arwin/ros2_ws/build/lidar_testnode', 'XDG_CONFIG_DIRS': '/etc/xdg/xdg-ubuntu:/etc/xdg', 'XDG_DATA_DIRS': '/usr/share/ubuntu:/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'PYTHONPATH': '/home/arwin/ros2_ws/build/lidar_testnode/prefix_override:/home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages:/home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages:/opt/ros/iron/lib/python3.10/site-packages', 'LC_NUMERIC': 'nl_NL.UTF-8', 'LC_PAPER': 'nl_NL.UTF-8', 'COLCON': '1', 'VTE_VERSION': '6800'}, 'shell': False}
+[0.801044] (-) TimerEvent: {}
+[0.901341] (-) TimerEvent: {}
+[1.001618] (-) TimerEvent: {}
+[1.004034] (lidar_testnode) StdoutLine: {'line': b'running develop\n'}
+[1.014413] (lidar_testnode) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/easy_install.py:158: EasyInstallDeprecationWarning: easy_install command is deprecated. Use build and pip and other standards-based tools.\n'}
+[1.014626] (lidar_testnode) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.015918] (lidar_testnode) StderrLine: {'line': b'/usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.\n'}
+[1.016045] (lidar_testnode) StderrLine: {'line': b'  warnings.warn(\n'}
+[1.101734] (-) TimerEvent: {}
+[1.202028] (-) TimerEvent: {}
+[1.204305] (lidar_testnode) StdoutLine: {'line': b'running egg_info\n'}
+[1.204666] (lidar_testnode) StdoutLine: {'line': b'writing lidar_testnode.egg-info/PKG-INFO\n'}
+[1.205625] (lidar_testnode) StdoutLine: {'line': b'writing dependency_links to lidar_testnode.egg-info/dependency_links.txt\n'}
+[1.207473] (lidar_testnode) StdoutLine: {'line': b'writing entry points to lidar_testnode.egg-info/entry_points.txt\n'}
+[1.208376] (lidar_testnode) StdoutLine: {'line': b'writing requirements to lidar_testnode.egg-info/requires.txt\n'}
+[1.209177] (lidar_testnode) StdoutLine: {'line': b'writing top-level names to lidar_testnode.egg-info/top_level.txt\n'}
+[1.212010] (lidar_testnode) StdoutLine: {'line': b"reading manifest file 'lidar_testnode.egg-info/SOURCES.txt'\n"}
+[1.212900] (lidar_testnode) StdoutLine: {'line': b"writing manifest file 'lidar_testnode.egg-info/SOURCES.txt'\n"}
+[1.214893] (lidar_testnode) StdoutLine: {'line': b'running build_ext\n'}
+[1.215284] (lidar_testnode) StdoutLine: {'line': b'Creating /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar-testnode.egg-link (link to .)\n'}
+[1.216415] (lidar_testnode) StdoutLine: {'line': b'Installing test_node script to /home/arwin/ros2_ws/install/lidar_testnode/lib/lidar_testnode\n'}
+[1.216697] (lidar_testnode) StdoutLine: {'line': b'\n'}
+[1.216872] (lidar_testnode) StdoutLine: {'line': b'Installed /home/arwin/ros2_ws/build/lidar_testnode\n'}
+[1.217001] (lidar_testnode) StdoutLine: {'line': b'running install_data\n'}
+[1.257938] (lidar_testnode) CommandEnded: {'returncode': 0}
+[1.276765] (lidar_testnode) JobEnded: {'identifier': 'lidar_testnode', 'rc': 0}
+[1.277464] (-) EventReactorShutdown: {}

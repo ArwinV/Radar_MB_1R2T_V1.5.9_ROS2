@@ -1,0 +1,35 @@
+[1.562s] Invoking command in '/home/arwin/ros2_ws/src/lidar_testnode': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/arwin/ros2_ws/build/lidar_testnode/prefix_override:/home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lidar_testnode build --build-base /home/arwin/ros2_ws/build/lidar_testnode/build install --record /home/arwin/ros2_ws/build/lidar_testnode/install.log --single-version-externally-managed
+[1.821s] running egg_info
+[1.821s] creating ../../build/lidar_testnode/lidar_testnode.egg-info
+[1.822s] writing ../../build/lidar_testnode/lidar_testnode.egg-info/PKG-INFO
+[1.822s] writing dependency_links to ../../build/lidar_testnode/lidar_testnode.egg-info/dependency_links.txt
+[1.822s] writing entry points to ../../build/lidar_testnode/lidar_testnode.egg-info/entry_points.txt
+[1.822s] writing requirements to ../../build/lidar_testnode/lidar_testnode.egg-info/requires.txt
+[1.822s] writing top-level names to ../../build/lidar_testnode/lidar_testnode.egg-info/top_level.txt
+[1.823s] writing manifest file '../../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+[1.825s] reading manifest file '../../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+[1.826s] writing manifest file '../../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+[1.826s] running build
+[1.826s] running build_py
+[1.826s] creating /home/arwin/ros2_ws/build/lidar_testnode/build
+[1.827s] creating /home/arwin/ros2_ws/build/lidar_testnode/build/lib
+[1.827s] creating /home/arwin/ros2_ws/build/lidar_testnode/build/lib/lidar_testnode
+[1.827s] copying lidar_testnode/__init__.py -> /home/arwin/ros2_ws/build/lidar_testnode/build/lib/lidar_testnode
+[1.827s] running install
+[1.827s] /usr/lib/python3/dist-packages/setuptools/command/install.py:34: SetuptoolsDeprecationWarning: setup.py install is deprecated. Use build and pip and other standards-based tools.
+[1.827s]   warnings.warn(
+[1.827s] running install_lib
+[1.828s] creating /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode
+[1.828s] copying /home/arwin/ros2_ws/build/lidar_testnode/build/lib/lidar_testnode/__init__.py -> /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode
+[1.828s] byte-compiling /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode/__init__.py to __init__.cpython-310.pyc
+[1.829s] running install_data
+[1.829s] creating /home/arwin/ros2_ws/install/lidar_testnode/share/ament_index
+[1.829s] creating /home/arwin/ros2_ws/install/lidar_testnode/share/ament_index/resource_index
+[1.830s] creating /home/arwin/ros2_ws/install/lidar_testnode/share/ament_index/resource_index/packages
+[1.830s] copying resource/lidar_testnode -> /home/arwin/ros2_ws/install/lidar_testnode/share/ament_index/resource_index/packages
+[1.830s] copying package.xml -> /home/arwin/ros2_ws/install/lidar_testnode/share/lidar_testnode
+[1.830s] running install_egg_info
+[1.831s] Copying ../../build/lidar_testnode/lidar_testnode.egg-info to /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode-0.0.0-py3.10.egg-info
+[1.832s] running install_scripts
+[1.859s] writing list of installed files to '/home/arwin/ros2_ws/build/lidar_testnode/install.log'
+[1.892s] Invoked command in '/home/arwin/ros2_ws/src/lidar_testnode' returned '0': CONDA_PROMPT_MODIFIER=(base) PYTHONPATH=/home/arwin/ros2_ws/build/lidar_testnode/prefix_override:/home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 setup.py egg_info --egg-base ../../build/lidar_testnode build --build-base /home/arwin/ros2_ws/build/lidar_testnode/build install --record /home/arwin/ros2_ws/build/lidar_testnode/install.log --single-version-externally-managed

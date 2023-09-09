@@ -1,0 +1,4 @@
+Simple ROS2 node hat publishes LaserScan messages from a Radar_MB_1R2T_V1.5.9 module.
+
+Build using 'colcon build'
+Run with 'ros2 run lidar_testnode lidar'

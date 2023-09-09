@@ -1,0 +1,30 @@
+running develop
+Removing /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar-testnode.egg-link (link to .)
+running egg_info
+writing ../../build/lidar_testnode/lidar_testnode.egg-info/PKG-INFO
+writing dependency_links to ../../build/lidar_testnode/lidar_testnode.egg-info/dependency_links.txt
+writing entry points to ../../build/lidar_testnode/lidar_testnode.egg-info/entry_points.txt
+writing requirements to ../../build/lidar_testnode/lidar_testnode.egg-info/requires.txt
+writing top-level names to ../../build/lidar_testnode/lidar_testnode.egg-info/top_level.txt
+reading manifest file '../../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+writing manifest file '../../build/lidar_testnode/lidar_testnode.egg-info/SOURCES.txt'
+running build
+running build_py
+copying lidar_testnode/lidar_mb_1r2t_publisher.py -> /home/arwin/ros2_ws/build/lidar_testnode/build/lib/lidar_testnode
+copying lidar_testnode/testnode.py -> /home/arwin/ros2_ws/build/lidar_testnode/build/lib/lidar_testnode
+running install
+running install_lib
+creating /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode
+copying /home/arwin/ros2_ws/build/lidar_testnode/build/lib/lidar_testnode/__init__.py -> /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode
+copying /home/arwin/ros2_ws/build/lidar_testnode/build/lib/lidar_testnode/lidar_mb_1r2t_publisher.py -> /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode
+copying /home/arwin/ros2_ws/build/lidar_testnode/build/lib/lidar_testnode/testnode.py -> /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode
+byte-compiling /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode/__init__.py to __init__.cpython-310.pyc
+byte-compiling /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode/lidar_mb_1r2t_publisher.py to lidar_mb_1r2t_publisher.cpython-310.pyc
+byte-compiling /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode/testnode.py to testnode.cpython-310.pyc
+running install_data
+running install_egg_info
+Copying ../../build/lidar_testnode/lidar_testnode.egg-info to /home/arwin/ros2_ws/install/lidar_testnode/lib/python3.10/site-packages/lidar_testnode-0.0.0-py3.10.egg-info
+running install_scripts
+Installing lidar script to /home/arwin/ros2_ws/install/lidar_testnode/lib/lidar_testnode
+Installing test_node script to /home/arwin/ros2_ws/install/lidar_testnode/lib/lidar_testnode
+writing list of installed files to '/home/arwin/ros2_ws/build/lidar_testnode/install.log'

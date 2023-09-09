@@ -1,0 +1,3 @@
+[console_scripts]
+lidar = lidar_testnode.lidar_mb_1r2t_publisher:main
+
