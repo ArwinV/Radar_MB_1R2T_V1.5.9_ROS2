@@ -69,7 +69,7 @@ class Lidar_MB_1R2T(Node):
                     if stop_angle > start_angle:
                         delta_angle = stop_angle - start_angle
                     else:
-                        delta_angle = 0xB400 - start_angle + stop_angle
+                        delta_angle = 0x168 - start_angle + stop_angle
                     delta_angle_per_sample = delta_angle / (data_length-1)
                     # Next bytes will be the data
                     state = State.DATA
