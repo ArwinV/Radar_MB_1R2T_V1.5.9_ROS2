@@ -1,3 +1,0 @@
-[console_scripts]
-test_node = lidar_testnode.testnode:main
-
