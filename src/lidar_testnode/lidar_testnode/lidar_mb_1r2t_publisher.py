@@ -1,120 +1,133 @@
 #!/usr/bin/env python3
 
-# Simple ROS2 node that reads data from a Radar_MB_1R2T module
-# The device outputs serial data with a baud rate of 152600
-# The data packets are built as follows:
-# [start1 0xAA] [start2 0x55] 
-# [type 0x28] 
-# [Length] 
-# [start_angleL] [start_angleH] 
-# [stop_angleL] [stop_angleH] 
-# [unknown] [unknown] 
-# {data: [quality?] [distanceL] [distanceH]}
+# Simple ROS2 node that reads data from a Radar_MB_1R2T module and publishes
+# one LaserScan message per revolution. The packet format is described in
+# mb_1r2t_protocol.py.
 
+from lidar_testnode.mb_1r2t_protocol import parse_packets, ScanAssembler
 import rclpy
+from rclpy.duration import Duration
+from rclpy.executors import ExternalShutdownException
 from rclpy.node import Node
-from enum import Enum
-import serial
 from sensor_msgs.msg import LaserScan
-import math
-import time
-import numpy as np
+import serial
 
-# States
-class State(Enum):
-    START = 0
-    HEADER = 1
-    DATA = 2
+# Packets to inspect before reporting whether the checksum assumption holds
+CHECKSUM_REPORT_PACKETS = 200
+# Time between attempts to reopen the serial port
+RECONNECT_INTERVAL = Duration(seconds=1.0)
 
-# Lidar object
-class Lidar_MB_1R2T(Node):
+
+class LidarMB1R2T(Node):
+
     def __init__(self):
-        super().__init__("lidar_mb_1r2t")
-        self.count = 0
-        # Create publisher
-        self.lidar_pub = self.create_publisher(LaserScan, "/lidar_mb_1r2t/scan", 10)
-        # Open serial
-        self.ser = serial.Serial("/dev/ttyUSB0", 153600, timeout=0.1)
-        time.sleep(1)
+        super().__init__('lidar_mb_1r2t')
+        self.port = self.declare_parameter('port', '/dev/ttyUSB0').value
+        self.baudrate = self.declare_parameter('baudrate', 153600).value
+        self.frame_id = self.declare_parameter('frame_id', 'lidar_frame').value
+        self.range_min = self.declare_parameter('range_min', 0.01).value
+        self.range_max = self.declare_parameter('range_max', 20.0).value
+        # Off by default: the checksum layout has not been confirmed on hardware.
+        # The node logs how many packets match so it can be checked.
+        self.verify_checksum = self.declare_parameter('verify_checksum', False).value
+        topic = self.declare_parameter('topic', '/lidar_mb_1r2t/scan').value
 
-        # Print log message
-        self.get_logger().info("Lidar started")
+        self.lidar_pub = self.create_publisher(LaserScan, topic, 10)
+        self.ser = None
+        self.last_open_attempt = None
+        self.buffer = bytearray()
+        self.assembler = ScanAssembler()
+        self.scan_start_time = None
+        self.packets_seen = 0
+        self.checksums_matched = 0
 
-    def read_packet(self):
-        # Read packet start bytes, header and data
-        state = State.START
-        run = True
-        while run:
-            if state == State.START:
-                # Read bytes until start of packet is read (0xAA55)
-                data = self.ser.read(1)
-                if data[0] == 0xAA:
-                    data = self.ser.read(1)
-                    if data[0] == 0x55:
-                        #self.get_logger().info("Start sequence detected")
-                        # Next bytes will be the header
-                        state = State.HEADER
-            if state == State.HEADER:
-                # Read 6 of the 8 header bytes (meaning of last two bytes are unknown)
-                data = self.ser.read(8)
-                packet_type = data[0]
-                data_length = int(data[1])
-                # Determine rest of data if packet is data
-                #self.get_logger().info("Data type: " + str(packet_type) + " Data length: " + str(data_length))
-                if (packet_type == 64) and (data_length > 1):
+        self.open_serial()
+        # Poll the serial port; packets arrive far more often than this
+        self.create_timer(0.005, self.poll)
+        self.get_logger().info('Lidar started')
 
-                    start_angle = float(((data[3] << 8) + int(data[2]))/128.0)
-                    stop_angle = float(((data[5] << 8) + int(data[4]))/128.0)
-                    # Find angle per sample
-                    if stop_angle > start_angle:
-                        delta_angle = stop_angle - start_angle
-                    else:
-                        delta_angle = 0x168 - start_angle + stop_angle
-                    delta_angle_per_sample = delta_angle / (data_length-1)
-                    # Next bytes will be the data
-                    state = State.DATA
-                else:
-                    # Start again
-                    state = State.START
-            if state == State.DATA:
-                # Read all datapoints, each having 3 bytes (quality?, dataL, dataH)
-                data = self.ser.read(data_length*3)
-                quality = []
-                distance = []
-                for i in range(0,data_length):
-                    quality.append(data[3*i])
-                    distance.append(((data[3*i+2] << 8) + data[3*i+1])/1000)
+    def open_serial(self):
+        self.last_open_attempt = self.get_clock().now()
+        try:
+            self.ser = serial.Serial(self.port, self.baudrate, timeout=0)
+            self.buffer.clear()
+            self.get_logger().info('Opened ' + self.port)
+        except serial.SerialException as e:
+            self.ser = None
+            self.get_logger().error(
+                'Could not open ' + self.port + ': ' + str(e),
+                throttle_duration_sec=10.0)
 
-                # Publish lidar data
-                scan = LaserScan()
-                scan.header.stamp = self.get_clock().now().to_msg()
-                #scan.header.seq = self.count
-                scan.header.frame_id = "lidar_frame"
-                scan.angle_min = start_angle * math.pi/(180)
-                scan.angle_max = stop_angle * math.pi/(180)
-                scan.angle_increment = delta_angle_per_sample * math.pi/(180)
-                #scan.time_increment = 0
-                #scan.scan_time = 0
-                scan.range_min = 0.01
-                scan.range_max = 20.0
-                scan.ranges = distance
-                scan.intensities = quality
-                self.lidar_pub.publish(scan)
-                run = False
-                #self.get_logger().info("Packet read")
+    def close_serial(self):
+        if self.ser is not None:
+            self.ser.close()
+            self.ser = None
 
-                #self.count += 1
-                state = State.START
+    def poll(self):
+        if self.ser is None:
+            if self.get_clock().now() - self.last_open_attempt >= RECONNECT_INTERVAL:
+                self.open_serial()
+            return
+        try:
+            waiting = self.ser.in_waiting
+            if waiting:
+                self.buffer += self.ser.read(waiting)
+        except (serial.SerialException, OSError) as e:
+            self.get_logger().error('Serial error, reconnecting: ' + str(e))
+            self.close_serial()
+            return
 
+        for packet in parse_packets(self.buffer):
+            self.handle_packet(packet)
+
+    def handle_packet(self, packet):
+        self.packets_seen += 1
+        if packet.checksum_ok:
+            self.checksums_matched += 1
+        if self.packets_seen == CHECKSUM_REPORT_PACKETS:
+            self.get_logger().info(
+                'Checksum matched on %d of %d packets%s' % (
+                    self.checksums_matched, self.packets_seen,
+                    '' if self.verify_checksum else
+                    ' (verification is off, see the verify_checksum parameter)'))
+        if self.verify_checksum and not packet.checksum_ok:
+            self.get_logger().debug('Dropping packet with bad checksum')
+            return
+
+        now = self.get_clock().now()
+        if self.scan_start_time is None:
+            self.scan_start_time = now
+        scan = self.assembler.add_packet(packet)
+        if scan is None:
+            return
+        self.publish_scan(scan, self.scan_start_time, now)
+        self.scan_start_time = now
+
+    def publish_scan(self, scan, start_time, end_time):
+        msg = LaserScan()
+        msg.header.stamp = start_time.to_msg()
+        msg.header.frame_id = self.frame_id
+        msg.angle_increment = scan.angle_increment
+        msg.angle_min = 0.0
+        msg.angle_max = (len(scan.ranges) - 1) * scan.angle_increment
+        msg.scan_time = (end_time - start_time).nanoseconds / 1e9
+        msg.time_increment = msg.scan_time / len(scan.ranges)
+        msg.range_min = self.range_min
+        msg.range_max = self.range_max
+        msg.ranges = scan.ranges
+        msg.intensities = scan.intensities
+        self.lidar_pub.publish(msg)
 
 
 def main(args=None):
-    # Initialize communications
     rclpy.init(args=args)
-    # Create node
-    lidar = Lidar_MB_1R2T()
-    while(True):
-        lidar.read_packet()
-
-    # Shutdown communications
-    rclpy.shutdown()
+    lidar = LidarMB1R2T()
+    try:
+        rclpy.spin(lidar)
+    except (KeyboardInterrupt, ExternalShutdownException):
+        pass
+    finally:
+        lidar.close_serial()
+        lidar.destroy_node()
+        if rclpy.ok():
+            rclpy.shutdown()
