@@ -1,4 +1,22 @@
-Simple ROS2 node hat publishes LaserScan messages from a Radar_MB_1R2T_V1.5.9 module.
+Simple ROS2 node that publishes LaserScan messages from a Radar_MB_1R2T_V1.5.9 lidar module.
+One message is published per full revolution.
 
-Build using 'colcon build'
+Build using 'colcon build' from the workspace root
 Run with 'ros2 run lidar_testnode lidar'
+
+Parameters (set with --ros-args -p name:=value):
+  port             serial port (default /dev/ttyUSB0)
+  baudrate         serial baud rate (default 153600)
+  topic            topic to publish on (default /lidar_mb_1r2t/scan)
+  frame_id         frame of the published scans (default lidar_frame)
+  range_min        minimum valid range in metres (default 0.01)
+  range_max        maximum valid range in metres (default 20.0)
+  verify_checksum  drop packets whose checksum does not match (default false)
+
+The two header bytes after the stop angle are assumed to be a checksum, but
+this has not been confirmed. A few seconds after starting, the node logs how
+many packets matched the assumed checksum. If (nearly) all of them match, it is
+safe to enable verify_checksum.
+
+Run the parser unit tests with 'colcon test --packages-select lidar_testnode'
+or with 'python3 -m pytest test/test_protocol.py' from src/lidar_testnode.

@@ -5,10 +5,11 @@
   <version>0.0.1</version>
   <description>Basic ROS2 node that publishes LaserScan messages</description>
   <maintainer email="arwin_verhoeven@hotmail.com">arwin</maintainer>
-  <license>TODO: License declaration</license>
+  <license>GPLv3</license>
 
   <depend>rclpy</depend>
   <depend>sensor_msgs</depend>
+  <exec_depend>python3-serial</exec_depend>
 
   <test_depend>ament_copyright</test_depend>
   <test_depend>ament_flake8</test_depend>
